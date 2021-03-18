@@ -28,43 +28,6 @@ public void addDigitalVideoDisc(DigitalVideoDisc disc){
     }
 }
 
-public void addDigitalVideoDisc(DigitalVideoDisc[] dvdList){
-    int num_disc = getQtyOrdered();
-
-    for(int i=0; i<dvdList.length; i++){
-        if(nbOrders < MAX_NUMBERS_ORDERED){
-            itemsOrdered[num_disc] = dvdList[i];
-            num_disc += 1;
-            setQtyOrdered(num_disc+1);
-            nbOrders+=1;
-        }
-        else
-            System.out.println(("Can't add. The list is full."));
-    }
-}
-
-public void addDigitalVideoDisc(DigitalVideoDisc dvd1, DigitalVideoDisc dvd2){
-    int num_disc = getQtyOrdered();
-
-    if(num_disc < MAX_NUMBERS_ORDERED){
-        itemsOrdered[num_disc] = dvd1;
-        num_disc += 1;
-        setQtyOrdered(num_disc+1);
-    }
-    else
-        System.out.println(("Can't add. The list is full."));
-
-
-    if(qtyOrdered < MAX_NUMBERS_ORDERED){
-        itemsOrdered[num_disc] = dvd2;
-        num_disc += 1;
-        setQtyOrdered(num_disc+1);
-    }
-    else
-        System.out.println(("Can't add. The list is full."));
-
-}
-
 public DigitalVideoDisc[] removeDigitalVideoDisc(DigitalVideoDisc disc){
     DigitalVideoDisc new_itemsdisc[] = new DigitalVideoDisc[MAX_NUMBERS_ORDERED];
     int num_disc = getQtyOrdered();
